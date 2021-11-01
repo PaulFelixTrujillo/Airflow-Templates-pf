@@ -22,7 +22,6 @@ process_dag = GoogleCloudStorageToPostgresTransfer(
     key =  'user_purchase.csv',
     gcs_conn_postgres_id = 'postgres_default',
     google_cloud_storage_conn_id ='gcp_default',   
-    dag = dag
 )
 
 process_dag
