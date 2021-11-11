@@ -32,7 +32,7 @@ GOOGLE_CONN_ID = "google_cloud_default"
 POSTGRES_CONN_ID = "postgres_default"
 FILENAME = "cities.parquet"
 SQL_QUERY = "select * from cities"
-bucket_name = "data-bootcamp-terraforms-us"
+bucket_name = "de-bucket-terraform-pf"
 
 upload_data = PostgresToGCSOperator(
         task_id="get_data", sql=SQL_QUERY, bucket=bucket_name, filename=FILENAME, gzip=False, dag=dag)
