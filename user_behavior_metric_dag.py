@@ -42,7 +42,7 @@ create_insert_into_table = f"""TRUNCATE TABLE {schema_name}.{table_name};
                     INSERT INTO {schema_name}.{table_name}
                     SELECT u.customer_id, CAST(SUM(u.quantity * u.unit_price) AS DECIMAL(18, 5)), SUM(r.positive_review), COUNT(r.cid), CURRENT_DATE                      
                     FROM public.reviews r
-                    JOIN public.user_purchase u ON r.cid = u.customer_id
+                    JOIN public.user_purchase_dt u ON r.cid = u.customer_id
                     GROUP BY u.customer_id;
                     """
 
